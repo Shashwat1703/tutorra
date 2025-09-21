@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  api-lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Placeholder API lint/test
+        run: |
+          echo "API lint/test placeholder - real steps in Module 3+"
+
+  runner-lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Placeholder runner tests
+        run: |
+          echo "Runner tests placeholder - real steps in Module 8"
+
+  web-lint-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Placeholder web lint/build
+        run: |
+          echo "Web lint/build placeholder - real steps in Module 4/11/12"
+
+  smoke-compose:
+    needs: [api-lint-test, runner-lint-test, web-lint-build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Docker Compose smoke (placeholder)
+        run: |
+          echo "Docker Compose smoke test will be added in Module 14"
